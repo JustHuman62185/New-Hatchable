@@ -23,7 +23,17 @@ Users do **not** provide AI API keys to this app. Instead, MCP-compatible AI cli
 
 ## Application scaffold
 
-The initial application scaffold uses Next.js, TypeScript, and Tailwind CSS. It includes a polished landing page, workspace dashboard, project workspace shell, MCP manifest definitions, role card sample data, and infrastructure connector definitions.
+The application uses Next.js, TypeScript, and Tailwind CSS. It includes a polished landing page, workspace dashboard, project workspace shell, MCP manifest definitions, role card sample data, and infrastructure connector definitions.
+
+## MCP HTTP foundation
+
+The initial backend is available as a same-origin JSON transport while full MCP transport, authentication, and PostgreSQL persistence are built:
+
+- `GET /api/mcp` lists the server capability manifest.
+- `GET /api/mcp/resources?projectId=demo&resource=blueprint` reads a project resource. Supported resources are `current`, `blueprint`, `tasks`, `files`, `integrations`, and `activity`.
+- `POST /api/mcp` invokes a supported tool with `{ "projectId": "demo", "tool": "list_tasks", "input": {} }`.
+
+The current repository is deliberately process-local and seeded with the `demo` project. It provides validated project, blueprint, task, file, integration-status, approval-request, and activity operations, but should not be treated as persistent storage or an authenticated public endpoint.
 
 ## Development
 
