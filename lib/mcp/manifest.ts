@@ -10,13 +10,18 @@ export const mcpResources = [
 
 export const mcpTools = [
   "get_project_summary",
+  "get_blueprint",
   "update_blueprint",
   "list_tasks",
   "create_task",
+  "update_task",
+  "complete_task",
   "list_files",
   "read_file",
   "write_file",
-  "run_build",
-  "get_preview_url",
-  "request_approval"
+  "list_integrations",
+  "get_database_connection_status",
+  "get_deployment_connection_status",
+  "request_approval",
+  "check_approval_status"
 ] as const;
